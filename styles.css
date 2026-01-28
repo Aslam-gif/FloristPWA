@@ -4,7 +4,11 @@
     --text: #333;
     --light: #fefefe;
 }
-
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -97,4 +101,57 @@ body {
     cursor: pointer;
     width: 100%;
     margin-top: 10px;
+}
+
+/* --- Base Styles (Mobile First) --- */
+.hero h1 {
+    font-size: 2rem; /* Smaller text for mobile */
+}
+
+.hero {
+    height: 50vh; /* Shorter hero on mobile */
+}
+
+/* --- Tablet & Desktop View (Screens wider than 768px) --- */
+@media screen and (min-width: 768px) {
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    
+    .hero {
+        height: 70vh;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablets */
+        gap: 20px;
+    }
+}
+
+/* --- Large Desktop View (Screens wider than 1024px) --- */
+@media screen and (min-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns on desktops */
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .navbar {
+        padding: 1rem 10%; /* More breathing room on big screens */
+    }
+}
+
+/* --- Small Mobile Tweak (Screens smaller than 480px) --- */
+@media screen and (max-width: 480px) {
+    .nav-links a {
+        display: none; /* Hide links like "Occasions" to save space */
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
+    .card img {
+        height: 250px; /* Slimmer images for small screens */
+    }
 }
